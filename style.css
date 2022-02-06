@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: #fcfbfb;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: beige;
+    width: 90%;
+    height: 70%;
+    border-radius: 0.9rem;
+}
+
+h1 {
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: rgb(129, 129, 129);
+    text-align: center;
+}
+
+p {
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: rgb(75, 73, 73);
+    text-align: center;
+}
+
+#__canvasContainer {
+    display: flex;
+    height: 13rem;
+    width: 13rem;
+    align-self: center;
+}
+
+.__covidInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+@media screen and (min-width: 800px) {
+    .__covidInfo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+    }
+}
