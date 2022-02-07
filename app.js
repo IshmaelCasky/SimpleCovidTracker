@@ -1,17 +1,18 @@
 var stats = []
 
 async function getData() {
-    const data = await fetch("https://covid-api.mmediagroup.fr/v1/cases");
+    const data = await fetch("https://covid19-api-philippines.herokuapp.com/api/summary");
     const resp = await data.json();
+    console.log(resp);
     return resp;
 }
 
 async function postData(data) {
     const response = await data;
-    const { confirmed: confirmed_ph, recovered: recovered_ph, population: population_ph, deaths: deaths_ph } = response.Philippines.All;
+    const { active_cases: confirmed_ph, total: total_ph, recoveries: recovered_ph, deaths: deaths_ph } = response.data;
     let p = document.getElementById("__covidcases");
-    p.innerHTML = confirmed_ph + " confirmed cases <br> " + recovered_ph + " recovered <br>" + population_ph + " population <br>" + deaths_ph + " deaths";
-    return [confirmed_ph, recovered_ph, deaths_ph, population_ph];
+    p.innerHTML = confirmed_ph + " confirmed cases <br> " + recovered_ph + " recovered <br>" + deaths_ph + " deaths <br>" + total_ph + " total";
+    return [confirmed_ph, recovered_ph, deaths_ph, total_ph];
 }
 
 async function displayChart() {
