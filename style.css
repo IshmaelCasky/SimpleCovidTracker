@@ -18,15 +18,16 @@ main {
     flex-direction: column;
     justify-content: center;
     background-color: beige;
-    width: 90%;
-    height: 70%;
+    width: 80%;
+    height: auto;
     border-radius: 0.9rem;
+    padding: 4rem 1rem
 }
 
 h1 {
     padding: 1rem;
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: rgb(129, 129, 129);
     text-align: center;
 }
@@ -65,8 +66,18 @@ p {
     }
     p {
         margin-bottom: 6rem;
+        font-size: 1.5rem;
     }
     h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+    }
+    #__canvasContainer {
+        display: flex;
+        height: 15rem;
+        width: 15rem;
+        align-self: center;
+    }
+    main {
+        height: 70%;
     }
 }
