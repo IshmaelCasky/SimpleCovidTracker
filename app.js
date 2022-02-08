@@ -4,7 +4,8 @@ async function getData() {
     const resp = await data.json();
     let spinner = document.getElementById("__covidInfoSpinner");
 
-    if (status == 200) {
+    if (status == 404) {
+    } else {
         await new Promise(r => setTimeout(r, 2000));
         spinner.style.display = "none";
         return resp;
