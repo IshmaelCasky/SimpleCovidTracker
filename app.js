@@ -1,14 +1,17 @@
 async function getData() {
-    const data = await fetch("https://covid19-api-philippines.herokuapp.com/api/summary");
-    const status = data.status;
-    const resp = await data.json();
-    let spinner = document.getElementById("__covidInfoSpinner");
-
-    if (status == 404) {
-    } else {
-        await new Promise(r => setTimeout(r, 2000));
-        spinner.style.display = "none";
-        return resp;
+    try {
+        const data = await fetch("https://covid19-api-philippines.herokuapp.com/api/summary");
+        const status = data.status;
+        const resp = await data.json();
+        let spinner = document.getElementById("__covidInfoSpinner");
+        if (status == 200) {
+            await new Promise(r => setTimeout(r, 2000));
+            spinner.style.display = "none";
+            return resp;
+        }
+    } catch (err) {
+        console.log(err);
+        return getData();
     }
 }
 
