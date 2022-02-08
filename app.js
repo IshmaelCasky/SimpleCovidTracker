@@ -7,6 +7,7 @@ async function getData() {
         if (status == 200) {
             await new Promise(r => setTimeout(r, 2000));
             spinner.style.display = "none";
+            console.log(resp)
             return resp;
         }
     } catch (err) {
