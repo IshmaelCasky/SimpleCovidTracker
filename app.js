@@ -1,5 +1,3 @@
-var stats = []
-
 async function getData() {
     const data = await fetch("https://covid19-api-philippines.herokuapp.com/api/summary");
     const status = data.status;
