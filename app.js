@@ -12,6 +12,11 @@ async function getData() {
     }
 }
 
+function showError(mesg){
+    let p = document.getElementById("__errorMessage");
+    p.innerHTML = "Error: " + mesg;
+}
+
 async function postData(data) {
     const response = await data;
     const { active_cases: confirmed_ph, total: total_ph, recoveries: recovered_ph, deaths: deaths_ph } = response.data;
