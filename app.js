@@ -2,9 +2,15 @@ var stats = []
 
 async function getData() {
     const data = await fetch("https://covid19-api-philippines.herokuapp.com/api/summary");
+    const status = data.status;
     const resp = await data.json();
-    console.log(resp);
-    return resp;
+    let spinner = document.getElementById("__covidInfoSpinner");
+
+    if (status == 200) {
+        await new Promise(r => setTimeout(r, 2000));
+        spinner.style.display = "none";
+        return resp;
+    }
 }
 
 async function postData(data) {
